@@ -1,0 +1,81 @@
+@font-face {
+    font-family: ubuntu-B;
+    src: url(font/Ubuntu-B.ttf);
+}
+
+@font-face {
+    font-family: ubuntu-M;
+    src: url(font/Ubuntu-M.ttf);
+}
+
+@font-face {
+    font-family: ubuntu-L;
+    src: url(font/Ubuntu-L.ttf);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
+
+#main {
+    position: relative;
+    overflow: hidden;
+}
+
+#page1 {
+    width: 100vw;
+    height: 100vh;
+    background-color: #010001;
+    position: relative;
+}
+
+#page1 > video {
+    width: 100%;
+    height: 100%;
+    object-fit: 100%;
+}
+
+#page1 > nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 30px;
+    padding-top: 30px;
+    position: absolute;
+    height: 10vh;
+    width: 100vw;
+}
+
+#page1 > nav > img {
+    width: 60px;
+}
+
+#right-nav > button {
+    padding: 10px 20px;
+    border-radius: 50px;
+    background-color: #010001;
+    border: 1px solid #fff;
+    color: #fff;
+    font-family: ubuntu-L;
+    font-size: 15px;
+}
+
+.bottom-page1 {
+    position: absolute;
+    bottom: 15%;
+    left: 15%;
+}
+
+.bottom-page1 > h1 {
+    font-family: ubuntu-B;
+    font-size: 5vw;
+    color: #fff;
+}
