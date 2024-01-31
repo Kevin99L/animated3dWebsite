@@ -6,10 +6,11 @@
     <title>Animated 3D Website</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@4.0.0/fonts/remixicon.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.css">
 </head>
 <body>
     <div id="main">
-        <div id="page1">
+        <div data-scroll data-scroll-speed="-5" id="page1">
             <nav>
                 <img src="media/mediZoneLogo.webp" alt="">
                 <div id="right-nav">
@@ -19,11 +20,22 @@
             </nav>
             <div class="bottom-page1">
                 <h1>Your Health Matters.<br>We're Here to Help</h1>
+                <div class="bottom-page1-inner">
+                    <h4>Expert care for your health needs.<br>Explore our services and book online.</h4>
+                    <button>LEARN MORE</button>
+                </div>
             </div>
             <video src="media/3Dmedicalvideo.mp4" autoplay loop muted></video>
         </div>
+        <div id="page2">
+            <h2>Manage Chronic Pain Effectively</h2>
+            <h1>Learn about the causes, types, and treatments of chronic pain, and get tips on how to cope with it in your daily life.</h1>
+        </div>
     </div>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" integrity="sha512-onMTRKJBKz8M1TnqqDuGBlowlH0ohFzMXYRNebz+yOcc5TQr/zAKsthzhuv0hiyUKEiQEQXEynnXCvNTOk50dg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
