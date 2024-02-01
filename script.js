@@ -77,6 +77,7 @@ function canvas() {
   function files(index) {
     // paste all images here
     var data = `
+    media/antibodyGrowth3d/frame-000.png
     media/antibodyGrowth3d/frame-001.png
     media/antibodyGrowth3d/frame-002.png
     media/antibodyGrowth3d/frame-003.png
@@ -233,7 +234,7 @@ function canvas() {
       centerShift_x,
       centerShift_y,
       img.width * ratio,
-      img.height * ratio,
+      img.height * ratio
     );
   }
 
@@ -246,7 +247,29 @@ function canvas() {
     // set start end according to preference
     start: `top top`,
     end: `250% top`,
-
   });
 }
-canvas()
+canvas();
+
+var clutter = "";
+
+document
+  .querySelector("#page4>h1")
+  .textContent.split(" ")
+  .forEach(function (dets) {
+    clutter += `<span> ${dets} </span>`;
+    document.querySelector("#page4>h1").innerHTML = clutter;
+  });
+
+gsap.to("#page4>h1>span", {
+  scrollTrigger: {
+    trigger: `#page4>h1>span`,
+    start: `top bottom`,
+    end: `bottom top`,
+    scroller: `#main`,
+    scrub: 0.5,
+  },
+  stagger: 0.2,
+  color: `#fff`,
+});
+  

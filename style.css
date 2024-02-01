@@ -28,6 +28,7 @@ body {
 #main {
     position: relative;
     overflow: hidden;
+    background-color: #050502;
 }
 
 #page1 {
@@ -148,4 +149,29 @@ body {
     position: relative;
     max-width: 100vw;
     max-height: 100vh;
+}
+
+#page4 {
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    flex-direction: column;
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    background-color: #050502;
+    font-family: ubuntu-L;
+}
+
+#page4 > h3 {
+    margin-left: 15vw;
+    margin-bottom: 2vw;
+    color: #fff;
+}
+
+#page4 > h1 {
+    margin-left: 15vw;
+    width: 70%;
+    font-size: 3vw;
+    color: #dadada69;
 }
