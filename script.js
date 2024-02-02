@@ -183,7 +183,7 @@ function canvas() {
     return data.split("\n")[index];
   }
 
-  const frameCount = 102;
+  const frameCount = 103;
 
   const images = [];
   const imageSeq = {
@@ -272,4 +272,192 @@ gsap.to("#page4>h1>span", {
   stagger: 0.2,
   color: `#fff`,
 });
-  
+
+function canvas1() {
+  const canvas = document.querySelector("#page5>canvas");
+  const context = canvas.getContext("2d");
+
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+
+  window.addEventListener("resize", function () {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+    render();
+  });
+
+  function files(index) {
+    // paste all images here
+    var data = `
+    media/3dSkull/frame-001.png
+    media/3dSkull/frame-002.png
+    media/3dSkull/frame-003.png
+    media/3dSkull/frame-004.png
+    media/3dSkull/frame-005.png
+    media/3dSkull/frame-006.png
+    media/3dSkull/frame-007.png
+    media/3dSkull/frame-008.png
+    media/3dSkull/frame-009.png
+    media/3dSkull/frame-010.png
+    media/3dSkull/frame-011.png
+    media/3dSkull/frame-012.png
+    media/3dSkull/frame-013.png
+    media/3dSkull/frame-014.png
+    media/3dSkull/frame-015.png
+    media/3dSkull/frame-016.png
+    media/3dSkull/frame-017.png
+    media/3dSkull/frame-018.png
+    media/3dSkull/frame-019.png
+    media/3dSkull/frame-020.png
+    media/3dSkull/frame-021.png
+    media/3dSkull/frame-023.png
+    media/3dSkull/frame-024.png
+    media/3dSkull/frame-025.png
+    media/3dSkull/frame-026.png
+    media/3dSkull/frame-027.png
+    media/3dSkull/frame-028.png
+    media/3dSkull/frame-029.png
+    media/3dSkull/frame-030.png
+    media/3dSkull/frame-031.png
+    media/3dSkull/frame-032.png
+    media/3dSkull/frame-033.png
+    media/3dSkull/frame-034.png
+    media/3dSkull/frame-035.png
+    media/3dSkull/frame-036.png
+    media/3dSkull/frame-037.png
+    media/3dSkull/frame-038.png
+    media/3dSkull/frame-039.png
+    media/3dSkull/frame-040.png
+    media/3dSkull/frame-041.png
+    media/3dSkull/frame-042.png
+    media/3dSkull/frame-043.png
+    media/3dSkull/frame-044.png
+    media/3dSkull/frame-045.png
+    media/3dSkull/frame-046.png
+    media/3dSkull/frame-047.png
+    media/3dSkull/frame-048.png
+    media/3dSkull/frame-049.png
+    media/3dSkull/frame-050.png
+    media/3dSkull/frame-051.png
+    media/3dSkull/frame-052.png
+    media/3dSkull/frame-053.png
+    media/3dSkull/frame-054.png
+    media/3dSkull/frame-055.png
+    media/3dSkull/frame-056.png
+    media/3dSkull/frame-057.png
+    media/3dSkull/frame-058.png
+    media/3dSkull/frame-059.png
+    media/3dSkull/frame-060.png
+    media/3dSkull/frame-061.png
+    media/3dSkull/frame-062.png
+    media/3dSkull/frame-063.png
+    media/3dSkull/frame-064.png
+    media/3dSkull/frame-065.png
+    media/3dSkull/frame-066.png
+    media/3dSkull/frame-067.png
+    media/3dSkull/frame-068.png
+    media/3dSkull/frame-069.png
+    media/3dSkull/frame-070.png
+    media/3dSkull/frame-071.png
+    media/3dSkull/frame-072.png
+    media/3dSkull/frame-073.png
+    media/3dSkull/frame-074.png
+    media/3dSkull/frame-075.png
+    media/3dSkull/frame-076.png
+    media/3dSkull/frame-077.png
+    media/3dSkull/frame-078.png
+    media/3dSkull/frame-079.png
+    media/3dSkull/frame-080.png
+    media/3dSkull/frame-081.png
+    media/3dSkull/frame-082.png
+    media/3dSkull/frame-083.png
+    media/3dSkull/frame-084.png
+    media/3dSkull/frame-085.png
+    media/3dSkull/frame-086.png
+    media/3dSkull/frame-087.png
+    media/3dSkull/frame-088.png
+    media/3dSkull/frame-089.png
+    media/3dSkull/frame-090.png
+    media/3dSkull/frame-091.png
+    media/3dSkull/frame-092.png
+    media/3dSkull/frame-093.png
+    media/3dSkull/frame-094.png
+    media/3dSkull/frame-095.png
+    media/3dSkull/frame-096.png
+    media/3dSkull/frame-097.png
+    media/3dSkull/frame-098.png
+    media/3dSkull/frame-099.png
+    media/3dSkull/frame-100.png
+    media/3dSkull/frame-101.png
+    media/3dSkull/frame-102.png
+    `;
+    return data.split("\n")[index];
+  }
+
+  const frameCount = 102;
+
+  const images = [];
+  const imageSeq = {
+    frame: 1,
+  };
+
+  for (let i = 0; i < frameCount; i++) {
+    const img = new Image();
+    img.src = files(i);
+    images.push(img);
+  }
+
+  gsap.to(imageSeq, {
+    frame: frameCount - 1,
+    snap: "frame",
+    ease: `none`,
+    scrollTrigger: {
+      scrub: 0.15,
+      trigger: `#page5>canvas`,
+      // set start end according to preference
+      start: `top top`,
+      end: `250% top`,
+      scroller: `#main`,
+    },
+    onUpdate: render,
+  });
+
+  images[1].onload = render;
+
+  function render() {
+    scaleImage(images[imageSeq.frame], context);
+  }
+
+  function scaleImage(img, ctx) {
+    var canvas = ctx.canvas;
+    var hRatio = canvas.width / img.width;
+    var vRatio = canvas.height / img.height;
+    var ratio = Math.max(hRatio, vRatio);
+    var centerShift_x = (canvas.width - img.width * ratio) / 2;
+    var centerShift_y = (canvas.height - img.height * ratio) / 2;
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    ctx.drawImage(
+      img,
+      0,
+      0,
+      img.width,
+      img.height,
+      centerShift_x,
+      centerShift_y,
+      img.width * ratio,
+      img.height * ratio
+    );
+  }
+
+  ScrollTrigger.create({
+    //object you want to pin it
+    trigger: "#page5",
+    pin: true,
+    // markers: true,
+    scroller: `#main`,
+    // set start end according to preference
+    start: `top top`,
+    end: `250% top`,
+  });
+}
+canvas1();
