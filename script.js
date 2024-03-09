@@ -394,7 +394,7 @@ function canvas1() {
     return data.split("\n")[index];
   }
 
-  const frameCount = 102;
+  const frameCount = 103;
 
   const images = [];
   const imageSeq = {
@@ -483,3 +483,249 @@ gsap.to("#page6>h1>span", {
   stagger: 0.2,
   color: `#fff`,
 });
+
+function canvas2() {
+  const canvas = document.querySelector("#page7>canvas");
+  const context = canvas.getContext("2d");
+
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+
+  window.addEventListener("resize", function () {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+    render();
+  });
+
+  function files(index) {
+    // paste all images here
+    var data = `
+    media/paper/1.webp
+    media/paper/2.webp
+    media/paper/3.webp
+    media/paper/4.webp
+    media/paper/5.webp
+    media/paper/6.webp
+    media/paper/7.webp
+    media/paper/8.webp
+    media/paper/9.webp
+    media/paper/10.webp
+    media/paper/11.webp
+    media/paper/12.webp
+    media/paper/13.webp
+    media/paper/14.webp
+    media/paper/15.webp
+    media/paper/16.webp
+    media/paper/17.webp
+    media/paper/18.webp
+    media/paper/19.webp
+    media/paper/20.webp
+    media/paper/21.webp
+    media/paper/22.webp
+    media/paper/23.webp
+    media/paper/24.webp
+    media/paper/25.webp
+    media/paper/26.webp
+    media/paper/27.webp
+    media/paper/28.webp
+    media/paper/29.webp
+    media/paper/30.webp
+    media/paper/31.webp
+    media/paper/32.webp
+    media/paper/33.webp
+    media/paper/34.webp
+    media/paper/35.webp
+    media/paper/36.webp
+    media/paper/37.webp
+    media/paper/38.webp
+    media/paper/39.webp
+    media/paper/40.webp
+    media/paper/41.webp
+    media/paper/42.webp
+    media/paper/43.webp
+    media/paper/44.webp
+    media/paper/45.webp
+    media/paper/46.webp
+    media/paper/47.webp
+    media/paper/48.webp
+    media/paper/49.webp
+    media/paper/50.webp
+    media/paper/51.webp
+    media/paper/52.webp
+    media/paper/53.webp
+    media/paper/54.webp
+    media/paper/55.webp
+    media/paper/56.webp
+    media/paper/57.webp
+    media/paper/58.webp
+    media/paper/59.webp
+    media/paper/60.webp
+    media/paper/61.webp
+    media/paper/62.webp
+    media/paper/63.webp
+    media/paper/64.webp
+    media/paper/65.webp
+    media/paper/66.webp
+    media/paper/67.webp
+    media/paper/68.webp
+    media/paper/69.webp
+    media/paper/70.webp
+    media/paper/71.webp
+    media/paper/72.webp
+    media/paper/73.webp
+    media/paper/74.webp
+    media/paper/75.webp
+    media/paper/76.webp
+    media/paper/77.webp
+    media/paper/78.webp
+    media/paper/79.webp
+    media/paper/80.webp
+    media/paper/81.webp
+    media/paper/82.webp
+    media/paper/83.webp
+    media/paper/84.webp
+    media/paper/85.webp
+    media/paper/86.webp
+    media/paper/87.webp
+    media/paper/88.webp
+    media/paper/89.webp
+    media/paper/90.webp
+    media/paper/91.webp
+    media/paper/92.webp
+    media/paper/93.webp
+    media/paper/94.webp
+    media/paper/95.webp
+    media/paper/96.webp
+    media/paper/97.webp
+    media/paper/98.webp
+    media/paper/99.webp
+    media/paper/100.webp
+    media/paper/101.webp
+    media/paper/102.webp
+    media/paper/103.webp
+    media/paper/104.webp
+    media/paper/105.webp
+    media/paper/106.webp
+    media/paper/107.webp
+    media/paper/108.webp
+    media/paper/109.webp
+    media/paper/110.webp
+    media/paper/111.webp
+    media/paper/112.webp
+    media/paper/113.webp
+    media/paper/114.webp
+    media/paper/115.webp
+    media/paper/116.webp
+    media/paper/117.webp
+    media/paper/118.webp
+    media/paper/119.webp
+    media/paper/120.webp
+    media/paper/121.webp
+    media/paper/122.webp
+    media/paper/123.webp
+    media/paper/124.webp
+    media/paper/125.webp
+    media/paper/126.webp
+    media/paper/127.webp
+    media/paper/128.webp
+    media/paper/129.webp
+    media/paper/130.webp
+    media/paper/131.webp
+    media/paper/132.webp
+    media/paper/133.webp
+    media/paper/134.webp
+    media/paper/135.webp
+    media/paper/136.webp
+    `;
+    return data.split("\n")[index];
+  }
+
+  const frameCount = 137;
+
+  const images = [];
+  const imageSeq = {
+    frame: 1,
+  };
+
+  for (let i = 0; i < frameCount; i++) {
+    const img = new Image();
+    img.src = files(i);
+    images.push(img);
+  }
+
+  gsap.to(imageSeq, {
+    frame: frameCount - 1,
+    snap: "frame",
+    ease: `none`,
+    scrollTrigger: {
+      scrub: 0.15,
+      trigger: `#page7>canvas`,
+      // set start end according to preference
+      start: `top top`,
+      end: `250% top`,
+      scroller: `#main`,
+    },
+    onUpdate: render,
+  });
+
+  images[1].onload = render;
+
+  function render() {
+    scaleImage(images[imageSeq.frame], context);
+  }
+
+  function scaleImage(img, ctx) {
+    var canvas = ctx.canvas;
+    var hRatio = canvas.width / img.width;
+    var vRatio = canvas.height / img.height;
+    var ratio = Math.max(hRatio, vRatio);
+    var centerShift_x = (canvas.width - img.width * ratio) / 2;
+    var centerShift_y = (canvas.height - img.height * ratio) / 2;
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    ctx.drawImage(
+      img,
+      0,
+      0,
+      img.width,
+      img.height,
+      centerShift_x,
+      centerShift_y,
+      img.width * ratio,
+      img.height * ratio
+    );
+  }
+
+  ScrollTrigger.create({
+    //object you want to pin it
+    trigger: "#page7",
+    pin: true,
+    // markers: true,
+    scroller: `#main`,
+    // set start end according to preference
+    start: `top top`,
+    end: `250% top`,
+  });
+}
+canvas2();
+
+gsap.to(".page7-cir",{
+  scrollTrigger:{
+    trigger: `.page7-cir`,
+    start: `top center`,
+    end: `bottom top`,
+    scroller: `#main`,
+    scrub: .5
+  },
+  scale: 1.5
+})
+
+gsap.to(".page7-cir-inner",{
+  scrollTrigger:{
+    trigger: `.page7-cir-inner`,
+    start: `top center`,
+    end: `bottom top`,
+    scroller: `#main`,
+    scrub: .5
+  },
+  backgroundColor: `#0a3cce91`
+})
