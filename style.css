@@ -249,3 +249,38 @@ body {
     background-color: transparent;
     border: 1px solid #fff;
 }
+
+#page8 {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    background-color: #0a3cce;
+}
+
+#page8 > video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.page8-bottom {
+    position: absolute;
+    bottom: 5%;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    font-family: ubuntu-L;
+}
+
+.page8-bottom > h2 {
+    color: #fff;
+    font-size: 5vw;
+}
+
+.page8-bottom > button {
+    padding: 20px 30px;
+    border-radius: 50px;
+    border: none;
+    background-color: #fff;
+    color: #0a3cce;
+}
