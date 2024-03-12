@@ -363,3 +363,61 @@ body {
     width: 80%;
     margin-top: 1vw;
 }
+
+#page11 {
+    position: relative;
+    width: 100vw;
+    height: 110vh;
+    background-color: #050502;
+    font-family: ubuntu-M;
+}
+
+#page11 > h2 {
+    position: absolute;
+    top: 5%;
+    left: 10%;
+    font-size: 4vw;
+    color: #fff;
+}
+
+.page11-inner {
+    display: flex;
+    position: relative;
+    top: 18%;
+    margin-bottom: 2vw;
+    width: 100%;
+    height: 24%;
+}
+
+.left11 {
+    position: relative;
+    left: 5%;
+    width: 40%;
+    height: 100%;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.left11 > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.left11 > .first-img {
+    object-position: top;
+}
+
+.right11 {
+    color: #fff;
+    position: absolute;
+    left: 50%;
+    width: 50%;
+    height: 100%;
+    padding-top: 5vw;
+    font-family: ubuntu-L;
+}
+
+.right11 > h2 {
+    font-size: 2vw;
+}
