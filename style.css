@@ -421,3 +421,27 @@ body {
 .right11 > h2 {
     font-size: 2vw;
 }
+
+#page12 {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    background-color: #02268e;
+}
+
+.page12-inner {
+    position: absolute;
+    top: 20%;
+    right: 10%;
+    color: #fff;
+    font-family: ubuntu-M;
+}
+
+.page12-inner > h2 {
+    font-size: 5vw;
+}
+
+.page12-inner > p {
+    font-size: 1.3vw;
+    font-family: ubuntu-L;
+}
