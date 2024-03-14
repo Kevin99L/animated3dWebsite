@@ -469,3 +469,52 @@ body {
     border-radius: 50px;
     margin-top: 2vw;
 }
+
+#page14 {
+    position: relative;
+    width: 100vw;
+    height: 60vh;
+    background-color: #050502;
+    color: #fff;
+}
+
+.page14-inner {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 5vw;
+    width: 100%;
+    height: 33.3%;
+    font-family: ubuntu-L;
+    border-top: .5px solid #ffffff5c;
+    border-bottom: .5px solid #ffffff5c;
+}
+
+.page14-inner > i {
+    font-size: 2.4vw;
+    font-weight: 100;
+    position: relative;
+    z-index: 5;
+}
+
+.page14-inner > h2 {
+    font-size: 3vw;
+    position: relative;
+    z-index: 5;
+}
+
+.center14 {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    transition: all ease .5s;
+    width: 100%;
+    height: 0%;
+    background-color: #0a3cce;
+}
+
+.page14-inner:hover .center14 {
+    height: 100%;
+}
