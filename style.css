@@ -445,3 +445,27 @@ body {
     font-size: 1.3vw;
     font-family: ubuntu-L;
 }
+
+#page13 {
+    position: relative;
+    width: 100vw;
+    height: 50vh;
+    background-color: #050502;
+    color: #fff;
+    font-family: ubuntu-L;
+    padding: 7vw 10vw;
+}
+
+#page13 > h2 {
+    font-size: 5vw;
+    line-height: 1;
+}
+
+#page13 > button {
+    padding: 18px 30px;
+    border: none;
+    background-color: #0a3cce;
+    color: #fff;
+    border-radius: 50px;
+    margin-top: 2vw;
+}
