@@ -729,3 +729,22 @@ gsap.to(".page7-cir-inner",{
   },
   backgroundColor: `#0a3cce91`
 })
+
+var nav_button = document.querySelector("#right-nav > button:last-child");
+var upper_span = document.querySelector("#right-nav > button:last-child > span:first-child");
+var lower_span = document.querySelector("#right-nav > button:last-child > span:last-child");
+nav_button.addEventListener("click", function() {
+  if (nav_button.classList.contains("open")) {
+    nav_button.classList.remove("open")
+    upper_span.style.transform = "translate(-50%,-50%) rotate(0deg)";
+    upper_span.style.top = "35%";
+    lower_span.style.transform = "translate(-50%,-50%) rotate(0deg)";
+    lower_span.style.top = "65%";
+  } else {
+    nav_button.classList.add("open");
+    upper_span.style.transform = "translate(-50%,-50%) rotate(45deg)";
+    upper_span.style.top = "50%";
+    lower_span.style.transform = "translate(-50%,-50%) rotate(-45deg)";
+    lower_span.style.top = "50%";
+  }
+});

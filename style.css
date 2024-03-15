@@ -59,6 +59,11 @@ body {
     width: 60px;
 }
 
+#right-nav {
+    display: flex;
+    gap: 10px;
+}
+
 #right-nav > button {
     position: relative;
     overflow: hidden;
@@ -89,6 +94,33 @@ body {
 
 #right-nav > button:first-child:hover::before{
     transform: translateY(0%);
+}
+
+#right-nav > button:last-child > span:first-child {
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 55%;
+    height: 2px;
+    background-color: #fff;
+    transition: all ease .5s;
+}
+
+#right-nav > button:last-child {
+    padding: 10px 30px;
+}
+
+#right-nav > button:last-child > span:last-child {
+    position: absolute;
+    top: 65%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 55%;
+    height: 2px;
+    background-color: #fff;
+    rotate: 0;
+    transition: all ease .5s;
 }
 
 .bottom-page1 {
