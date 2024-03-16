@@ -755,3 +755,13 @@ nav_button.addEventListener("click", function() {
     container_cover.style.opacity = ".6";
   }
 });
+
+var pre_loader = document.querySelector(".pre-loader");
+var white_div = document.querySelector(".white-div");
+var black_div = document.querySelector(".black-div");
+
+window.onload = () => {
+  black_div.classList.add("loaded");
+  white_div.classList.add("loaded");
+  pre_loader.classList.add("loaded");
+}

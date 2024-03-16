@@ -13,6 +13,12 @@
     src: url(font/Ubuntu-L.ttf);
 }
 
+@keyframes preloader {
+    to {
+        height: 0vw;
+    }
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -29,6 +35,42 @@ body {
     position: relative;
     overflow: hidden;
     background-color: #050502;
+}
+
+.pre-loader {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    bottom: 0;
+    z-index: 6;
+}
+
+.pre-loader.loaded {
+    animation: preloader .7s ease-in-out forwards .3s;
+}
+
+.white-div {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    bottom: 0;
+    background-color: #fff;
+}
+
+.white-div.loaded {
+    animation: preloader .7s ease-in-out forwards .3s;
+}
+
+.black-div {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    bottom: 0;
+    background-color: #000;
+}
+
+.black-div.loaded {
+    animation: preloader .7s ease-in-out forwards;
 }
 
 #page1 {
