@@ -739,7 +739,7 @@ var menu = document.querySelector(".menu");
 nav_button.addEventListener("click", function() {
   if (nav_button.classList.contains("open")) {
     nav_button.classList.remove("open")
-    menu.style.right = "-40%";
+    menu.style.right = "-45%";
     upper_span.style.transform = "translate(-50%,-50%) rotate(0deg)";
     upper_span.style.top = "35%";
     lower_span.style.transform = "translate(-50%,-50%) rotate(0deg)";
