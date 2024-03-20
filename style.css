@@ -622,6 +622,19 @@ body {
     font-family: ubuntu-L;
 }
 
+.clients {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom: 6vw;
+    gap: 10%;
+}
+
+.clients > img {
+    width: 10%;
+}
+
 #page13 {
     position: relative;
     width: 100vw;
